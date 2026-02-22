@@ -59,7 +59,7 @@ pub async fn signup(
     // 2. Create the User
     let user_id = sqlx::query_scalar!(
         "INSERT INTO users (email, name, password_hash, password_salt, public_key, encrypted_private_key, private_key_nonce)
-         VALUES ($1, $2, $3, $4, $5, $6) RETURNING id",
+         VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id",
         reg_data.email,
         reg_data.name,
         reg_data.password_hash,

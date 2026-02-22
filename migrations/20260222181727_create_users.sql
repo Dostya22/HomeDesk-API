@@ -5,7 +5,6 @@ CREATE TABLE users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     email TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL,
-    -- Stored as an Argon2id hash string
     password_hash BYTEA NOT NULL,
     password_salt BYTEA NOT NULL,
     -- The Public Key (Plaintext) used by others to share Team Keys with this user
