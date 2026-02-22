@@ -6,9 +6,10 @@ CREATE TABLE users (
     email TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL,
     -- Stored as an Argon2id hash string
-    password_hash TEXT NOT NULL,
+    password_hash BYTEA NOT NULL,
+    password_salt BYTEA NOT NULL,
     -- The Public Key (Plaintext) used by others to share Team Keys with this user
-    public_key TEXT NOT NULL,
+    public_key BYTEA NOT NULL,
     -- The Private Key (Encrypted) so the user can log in on multiple devices.
     encrypted_private_key BYTEA NOT NULL,
     private_key_nonce BYTEA NOT NULL,

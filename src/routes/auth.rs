@@ -13,8 +13,9 @@ pub struct RegisterRequest {
     pub invite_code: String,
     pub email: String,
     pub name: String,
-    pub password_hash: String,
-    pub public_key: String,
+    pub password_hash: Vec<u8>,
+    pub password_salt: Vec<u8>,
+    pub public_key: Vec<u8>,
     pub encrypted_private_key: Vec<u8>,
     pub private_key_nonce: Vec<u8>,
     // Wrapped Personal Team Key data
@@ -57,11 +58,12 @@ pub async fn signup(
 
     // 2. Create the User
     let user_id = sqlx::query_scalar!(
-        "INSERT INTO users (email, name, password_hash, public_key, encrypted_private_key, private_key_nonce)
+        "INSERT INTO users (email, name, password_hash, password_salt, public_key, encrypted_private_key, private_key_nonce)
          VALUES ($1, $2, $3, $4, $5, $6) RETURNING id",
         reg_data.email,
         reg_data.name,
         reg_data.password_hash,
+        reg_data.password_salt,
         reg_data.public_key,
         reg_data.encrypted_private_key,
         reg_data.private_key_nonce
