@@ -33,8 +33,12 @@ A secure backend API for managing credentials and team secrets, built with Rust.
 
 ### Configuration
 
-1. Copy `Rocket.toml` (if needed) and ensure your database connection string is set up.
-2. The application expects a PostgreSQL database.
+1. Create a `Rocket.toml` file in the root directory. You can use `Rocket.toml.template` as a starting point:
+   ```bash
+   cp Rocket.toml.template Rocket.toml
+   ```
+2. Update the `url` in the `[default.databases.postgres_db]` section with your PostgreSQL connection string.
+3. The application expects a PostgreSQL database.
 
 ### Running the API
 

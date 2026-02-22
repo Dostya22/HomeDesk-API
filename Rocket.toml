@@ -1,3 +1,13 @@
+[default]
+address = "127.0.0.1"
+port = 8000
+
 [default.databases.postgres_db]
 url = "postgres://postgres:password@localhost:5432/homedesk_api"
 pool_size = 10
+
+[debug]
+log_level = "debug"
+
+[release]
+log_level = "normal"

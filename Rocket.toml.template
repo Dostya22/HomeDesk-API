@@ -1,0 +1,15 @@
+[default]
+address = "127.0.0.1"
+port = 8000
+
+[default.databases.postgres_db]
+url = "postgres://username:password@localhost:5432/database_name"
+pool_size = 10
+
+[debug]
+log_level = "debug"
+
+[release]
+log_level = "normal"
+# You might want to change address to 0.0.0.0 in release if it's in a container
+# address = "0.0.0.0"
