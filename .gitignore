@@ -1,0 +1,5 @@
+/target
+Rocket.toml
+.sqlx
+.idea
+Cargo.lock

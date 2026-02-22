@@ -1,0 +1,3 @@
+[default.databases.postgres_db]
+url = "postgres://postgres:password@localhost:5432/homedesk_api"
+pool_size = 10

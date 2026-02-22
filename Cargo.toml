@@ -1,0 +1,15 @@
+[package]
+name = "HomeDesk-API"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aes-gcm = "0.10.3"
+argon2 = "0.5.3"
+jsonwebtoken = "10.3.0"
+rocket = { version = "0.5.1", features = ["json"] }
+rocket_db_pools = { version = "0.2", features = ["sqlx_postgres"] }
+serde = { version = "1.0.228", features = ["derive"] }
+sqlx = { version = "0.7", default-features = false, features = ["macros", "migrate", "postgres", "runtime-tokio", "uuid", "chrono"] }
+uuid = { version = "1.21.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
