@@ -3,3 +3,4 @@ Rocket.toml
 .sqlx
 .idea
 Cargo.lock
+/.env
